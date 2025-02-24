@@ -1,0 +1,19 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Items List</title>
+    </head>
+<body>
+
+<h1>Items List</h1>
+<a href="{% url 'create_item' %}">Create New Item</a>
+<ul>
+  {% for item in items %}
+    <li>{{ item.name }} - {{ item.description }} 
+        <a href="{% url 'update_item' item.pk %}">Edit</a> 
+        <a href="{% url 'delete_item' item.pk %}">Delete</a>
+    </li>
+  {% endfor %}
+</ul>
+</body>
+</html>
